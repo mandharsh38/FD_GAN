@@ -3,7 +3,7 @@ from sklearn.preprocessing import StandardScaler, RobustScaler
 from imblearn.over_sampling import SMOTE
 
 def load_and_preprocess_data():
-    data = pd.read_csv('./FD_CreditCard.csv')
+    data = pd.read_csv('./fraudTrain.csv')
     std_scaler = StandardScaler()
     robust_scaler = RobustScaler()
     data.loc[:, 'V1':'V10'] = std_scaler.fit_transform(data.loc[:, 'V1':'V10'])

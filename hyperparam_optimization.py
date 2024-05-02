@@ -1,5 +1,5 @@
-from train.train_conditional_gan import train_conditional_gan
-from utils.data_preprocessing import load_and_preprocess_data
+from train_conditional_gan import train_conditional_gan
+from data_preprocessing import load_and_preprocess_data
 
 
 def objective(trial):

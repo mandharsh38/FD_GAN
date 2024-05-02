@@ -6,8 +6,8 @@ def load_and_preprocess_data():
     data = pd.read_csv('./FD_CreditCard.csv')
     std_scaler = StandardScaler()
     robust_scaler = RobustScaler()
-    data.loc[:, 'V1':'V28'] = std_scaler.fit_transform(data.loc[:, 'V1':'V28'])
-    data[['Time', 'Amount']] = robust_scaler.fit_transform(data[['Time', 'Amount']])
+    data.loc[:, 'V1':'V10'] = std_scaler.fit_transform(data.loc[:, 'V1':'V10'])
+    data[['trans_date_trans_time', 'amt']] = robust_scaler.fit_transform(data[['trans_date_trans_time', 'amt']])
     X = data.drop('Class', axis=1)
     y = data['Class']
     smote = SMOTE(sampling_strategy='auto', random_state=42)

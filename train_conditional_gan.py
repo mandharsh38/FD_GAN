@@ -7,12 +7,12 @@ from tensorflow.keras.layers import Input
 from tensorflow.keras import Model
 from data_preprocessing import load_and_preprocess_data
 
-from models.conditional_discriminator import build_conditional_discriminator
-from models.conditional_generator import build_conditional_generator
-from models.conditional_gan import build_conditional_gan
+from conditional_discriminator import build_conditional_discriminator
+from conditional_generator import build_conditional_generator
+from conditional_gan import build_conditional_gan
 
-from utils.fid_calculator import compute_fid  
-from utils.loss_calculator import wasserstein_loss  
+from fid_calculator import compute_fid  
+from loss_calculator import wasserstein_loss  
 
 def train_conditional_gan(X_resampled, best_params):
     conditional_generator = build_conditional_generator(best_params['latent_dim'])
